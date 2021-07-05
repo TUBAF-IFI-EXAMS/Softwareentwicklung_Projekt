@@ -1,3 +1,2 @@
 # Softwareentwicklung_Projekt
-ich bin auch da
-jetzt kann es los gehen
+Dies ist die alternative Prüfungsleistung von Georg Nicholas Bachmann und Adrian Papst.
