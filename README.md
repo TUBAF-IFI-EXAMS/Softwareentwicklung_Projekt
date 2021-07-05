@@ -1,3 +1,3 @@
 # Softwareentwicklung_Projekt
-Dies ist die alternative Prüfungsleistung von Georg Nicholas Bachmann und Adrian Papst.
-Wir möchten eine Textanalyse über Wikipedia implementieren.
+Dies ist die alternative Prüfungsleistung von Georg Nicholas Bachmann (65671) und Adrian Papst ().
+Wir möchten eine Textanalyse über Wikipedia implementieren. Wir wollen ein Tool realisieren, welches Wikipedia durchsucht und auswertet.
