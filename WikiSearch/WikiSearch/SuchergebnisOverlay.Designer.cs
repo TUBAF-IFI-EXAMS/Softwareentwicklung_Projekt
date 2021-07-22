@@ -29,115 +29,164 @@ namespace WikiSearch
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_result = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_row1 = new System.Windows.Forms.Label();
-            this.lbl_row2 = new System.Windows.Forms.Label();
-            this.lbl_row3 = new System.Windows.Forms.Label();
-            this.lbl_row4 = new System.Windows.Forms.Label();
-            this.lbl_row5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_result
+            // tableLayoutPanel2
             // 
-            this.lbl_result.AutoSize = true;
-            this.lbl_result.Location = new System.Drawing.Point(35, 25);
-            this.lbl_result.Name = "lbl_result";
-            this.lbl_result.Size = new System.Drawing.Size(136, 20);
-            this.lbl_result.TabIndex = 0;
-            this.lbl_result.Text = "label_Suchergebnis";
-            this.lbl_result.Click += new System.EventHandler(this.lbl_searchresult_Click);
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.19672F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.80328F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 318F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // label1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.19672F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.80328F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
-            this.tableLayoutPanel1.Controls.Add(this.lbl_row1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_row2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_row3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_row4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_row5, 4, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 64);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1577, 154);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reihe 1";
             // 
-            // lbl_row1
+            // label2
             // 
-            this.lbl_row1.AutoSize = true;
-            this.lbl_row1.Location = new System.Drawing.Point(3, 0);
-            this.lbl_row1.Name = "lbl_row1";
-            this.lbl_row1.Size = new System.Drawing.Size(58, 20);
-            this.lbl_row1.TabIndex = 0;
-            this.lbl_row1.Text = "Reihe 1";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-366, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Reihe 2";
             // 
-            // lbl_row2
+            // dgv
             // 
-            this.lbl_row2.AutoSize = true;
-            this.lbl_row2.Location = new System.Drawing.Point(297, 0);
-            this.lbl_row2.Name = "lbl_row2";
-            this.lbl_row2.Size = new System.Drawing.Size(58, 20);
-            this.lbl_row2.TabIndex = 2;
-            this.lbl_row2.Text = "Reihe 2";
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dgv.Location = new System.Drawing.Point(35, 57);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.RowTemplate.Height = 29;
+            this.dgv.Size = new System.Drawing.Size(1598, 562);
+            this.dgv.TabIndex = 1;
             // 
-            // lbl_row3
+            // Column1
             // 
-            this.lbl_row3.AutoSize = true;
-            this.lbl_row3.Location = new System.Drawing.Point(613, 0);
-            this.lbl_row3.Name = "lbl_row3";
-            this.lbl_row3.Size = new System.Drawing.Size(58, 20);
-            this.lbl_row3.TabIndex = 3;
-            this.lbl_row3.Text = "Reihe 3";
+            this.Column1.HeaderText = "Titel";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 258;
             // 
-            // lbl_row4
+            // Column2
             // 
-            this.lbl_row4.AutoSize = true;
-            this.lbl_row4.Location = new System.Drawing.Point(966, 0);
-            this.lbl_row4.Name = "lbl_row4";
-            this.lbl_row4.Size = new System.Drawing.Size(58, 20);
-            this.lbl_row4.TabIndex = 4;
-            this.lbl_row4.Text = "Reihe 4";
+            this.Column2.HeaderText = "Wortanzahl";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 90;
             // 
-            // lbl_row5
+            // Column3
             // 
-            this.lbl_row5.AutoSize = true;
-            this.lbl_row5.Location = new System.Drawing.Point(1262, 0);
-            this.lbl_row5.Name = "lbl_row5";
-            this.lbl_row5.Size = new System.Drawing.Size(58, 20);
-            this.lbl_row5.TabIndex = 5;
-            this.lbl_row5.Text = "Reihe 5";
+            this.Column3.HeaderText = "Größe (Bytes)";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 258;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Text Vorschau";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 257;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "URL";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 258;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Letze Änderung";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 257;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(35, 652);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(106, 29);
+            this.btn_delete.TabIndex = 2;
+            this.btn_delete.Text = "Zeile löschen";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(35, 708);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(202, 29);
+            this.btn_clear.TabIndex = 3;
+            this.btn_clear.Text = "alle Suchergebnisse löschen";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // SuchergebnisOverlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1645, 462);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lbl_result);
+            this.ClientSize = new System.Drawing.Size(1645, 763);
+            this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.dgv);
             this.Name = "SuchergebnisOverlay";
             this.Text = "SuchergebnisOverlay";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Label lbl_result;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        public System.Windows.Forms.Label lbl_row1;
-        public System.Windows.Forms.Label lbl_row2;
-        public System.Windows.Forms.Label lbl_row3;
-        public System.Windows.Forms.Label lbl_row4;
-        public System.Windows.Forms.Label lbl_row5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

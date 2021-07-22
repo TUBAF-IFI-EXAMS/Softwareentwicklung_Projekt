@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WikiDotNet;
+using System.Threading;
 
 namespace WikiSearch
 {
@@ -16,6 +18,8 @@ namespace WikiSearch
         public int maxSearch = 5;
         public string Sprache = "de";
         SuchergebnisOverlay Suchergebnis = new SuchergebnisOverlay();
+        DataTable table = new DataTable();
+       
 
         public Suchoverlay()
         {
@@ -24,16 +28,20 @@ namespace WikiSearch
             lbl_cancelled.Text = "";
             lbl_searchnote.Text = "Geben Sie Ihren Suchbegriff in die Suchzeile ein.";
             lbl_resultesfound.Text = "";
+            lbl_clearsuch.Text = "";
 
 
         }
+       
+       
 
-        private void btn_search_Click(object sender, EventArgs e)       //onclick suchen
+        public void btn_search_Click(object sender, EventArgs e)       //onclick suchen
         {
             lbl_cancelled.Text = "";
             lbl_cancelled.BackColor = Color.Transparent;
             lbl_searching.Text = "searching...";
             lbl_searching.BackColor = Color.LightGreen;
+            lbl_clearsuch.Text = "";
 
             string searchString = txtbx_searchquery.Text;
 
@@ -46,22 +54,19 @@ namespace WikiSearch
 
                 lbl_resultesfound.Text = ("Es wurden " + searchSettings.ResultLimit + " Ergebnisse für " + searchString + " gefunden.");
                 lbl_searching.Text = "";
+                
                 foreach (WikiSearchResult result in response.Query.SearchResults)
                 {
-                    Suchergebnis.ShowDialog();
-                    Suchergebnis.lbl_row1.Text = ($"\t{result.Title}");
-                    Suchergebnis.lbl_row2.Text = ($"\t({result.WordCount} words, {result.Size} bytes, id {result.PageId})");
-                    Suchergebnis.lbl_row3.Text = ($"\t{result.Preview}");
-                    Suchergebnis.lbl_row4.Text = ($"\t{result.Url(searchSettings.Language)}");
-                    Suchergebnis.lbl_row5.Text = ($"\tLast edited at {result.LastEdited}");
-
+                    Suchergebnis.dgv.Rows.Add(Text = result.Title, result.WordCount , result.Size, result.Preview,($"\t{result.Url(searchSettings.Language)}"), result.LastEdited);
                 }
+                Suchergebnis.ShowDialog();
             }
             else
             {
                 lbl_searching.Text = "";
                 lbl_resultesfound.Text = "Es wurde ein Fehler bei der Eingebe gemacht";
             }
+            
 
 
 
@@ -72,9 +77,13 @@ namespace WikiSearch
             lbl_searching.Text = "";
             lbl_searching.BackColor = Color.Transparent;
             lbl_cancelled.Text = "Suche abgebrochen";
-            lbl_cancelled.BackColor = Color.Red;  //in Light Rot ändern
+            lbl_cancelled.BackColor = Color.Red;                        //in Light Rot ändern
             txtbx_searchquery.Text = "";
             lbl_resultesfound.Text = "";
+            lbl_clearsuch.Text = "Ergebnisse gelöscht";
+            lbl_clearsuch.BackColor = Color.LightGreen;
+            Suchergebnis.dgv.Rows.Clear();
+
 
 
         }
@@ -107,9 +116,9 @@ namespace WikiSearch
             maxSearch = 10;
         }
 
-        private void toolStripMenuItem7_Click(object sender, EventArgs e)       //onclick Suchergebnisse 100
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)       //onclick Suchergebnisse 50
         {
-            maxSearch = 100;
+            maxSearch = 50;
         }
 
         private void deutschToolStripMenuItem_Click(object sender, EventArgs e)      //onclick Sprache Deutsch

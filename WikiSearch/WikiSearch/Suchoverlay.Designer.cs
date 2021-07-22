@@ -48,6 +48,7 @@ namespace WikiSearch
             this.spracheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englischToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_clearsuch = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace WikiSearch
             // 
             this.btn_search.Location = new System.Drawing.Point(72, 181);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(94, 29);
+            this.btn_search.Size = new System.Drawing.Size(103, 29);
             this.btn_search.TabIndex = 0;
             this.btn_search.Text = "suchen";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -74,9 +75,9 @@ namespace WikiSearch
             // 
             this.btn_cancel.Location = new System.Drawing.Point(72, 289);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(94, 29);
+            this.btn_cancel.Size = new System.Drawing.Size(103, 29);
             this.btn_cancel.TabIndex = 2;
-            this.btn_cancel.Text = "Abbruch";
+            this.btn_cancel.Text = "Zurücksetzen";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
@@ -159,35 +160,35 @@ namespace WikiSearch
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(116, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(108, 26);
             this.toolStripMenuItem3.Text = "1";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(116, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(108, 26);
             this.toolStripMenuItem4.Text = "2";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(116, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(108, 26);
             this.toolStripMenuItem5.Text = "5";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(116, 26);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(108, 26);
             this.toolStripMenuItem6.Text = "10";
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(116, 26);
-            this.toolStripMenuItem7.Text = "100";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(108, 26);
+            this.toolStripMenuItem7.Text = "50";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // spracheToolStripMenuItem
@@ -202,22 +203,32 @@ namespace WikiSearch
             // deutschToolStripMenuItem
             // 
             this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
-            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.deutschToolStripMenuItem.Text = "Deutsch";
             this.deutschToolStripMenuItem.Click += new System.EventHandler(this.deutschToolStripMenuItem_Click);
             // 
             // englischToolStripMenuItem
             // 
             this.englischToolStripMenuItem.Name = "englischToolStripMenuItem";
-            this.englischToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.englischToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.englischToolStripMenuItem.Text = "Englisch";
             this.englischToolStripMenuItem.Click += new System.EventHandler(this.englischToolStripMenuItem_Click);
+            // 
+            // lbl_clearsuch
+            // 
+            this.lbl_clearsuch.AutoSize = true;
+            this.lbl_clearsuch.Location = new System.Drawing.Point(208, 327);
+            this.lbl_clearsuch.Name = "lbl_clearsuch";
+            this.lbl_clearsuch.Size = new System.Drawing.Size(97, 20);
+            this.lbl_clearsuch.TabIndex = 9;
+            this.lbl_clearsuch.Text = "label_cleared";
             // 
             // Suchoverlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_clearsuch);
             this.Controls.Add(this.lbl_resultesfound);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.txtbx_searchquery);
@@ -259,6 +270,7 @@ namespace WikiSearch
         private System.Windows.Forms.ToolStripMenuItem spracheToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englischToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_clearsuch;
     }
 }
 
