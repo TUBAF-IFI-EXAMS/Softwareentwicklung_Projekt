@@ -15,13 +15,13 @@ namespace WikiSearch
 {
     public partial class Suchoverlay : Form
     {
-        public int maxSearch = 5;
+        public int maxSearch = 5;                                           // zusätzliche Variablen Festlegen
         public string Sprache = "de";
-        SuchergebnisOverlay Suchergebnis = new SuchergebnisOverlay();
+        SuchergebnisOverlay Suchergebnis = new SuchergebnisOverlay();       
         DataTable table = new DataTable();
        
 
-        public Suchoverlay()
+        public Suchoverlay()                                                // Suchoverlay Initialisieren
         {
             InitializeComponent();
             lbl_searching.Text = "";
@@ -35,7 +35,7 @@ namespace WikiSearch
        
        
 
-        public void btn_search_Click(object sender, EventArgs e)       //onclick suchen
+        public void btn_search_Click(object sender, EventArgs e)       // onclick suchen
         {
             lbl_cancelled.Text = "";
             lbl_cancelled.BackColor = Color.Transparent;
@@ -45,9 +45,9 @@ namespace WikiSearch
 
             string searchString = txtbx_searchquery.Text;
 
-            if (txtbx_searchquery.Text != "")
+            if (txtbx_searchquery.Text != "")                           // prüfen ob Eingabefeld ist leer
             {
-                WikiSearchSettings searchSettings = new WikiSearchSettings
+                WikiSearchSettings searchSettings = new WikiSearchSettings          
                 { RequestId = "Request ID", ResultLimit = maxSearch, ResultOffset = 2, Language = Sprache };
 
                 WikiSearchResponse response = WikiSearcher.Search(searchString, searchSettings);
@@ -55,17 +55,20 @@ namespace WikiSearch
                 lbl_resultesfound.Text = ("Es wurden " + searchSettings.ResultLimit + " Ergebnisse für " + searchString + " gefunden.");
                 lbl_searching.Text = "";
                 
-                foreach (WikiSearchResult result in response.Query.SearchResults)
+
+                foreach (WikiSearchResult result in response.Query.SearchResults)           // Tabelle füllen
                 {
                     Suchergebnis.dgv.Rows.Add(Text = result.Title, result.WordCount , result.Size, result.Preview,($"\t{result.Url(searchSettings.Language)}"), result.LastEdited);
                 }
                 Suchergebnis.ShowDialog();
+                
             }
-            else
+            else                                                                            //  wenn Eingabefeld leer Fehlermedldung ausgeben
             {
                 lbl_searching.Text = "";
                 lbl_resultesfound.Text = "Es wurde ein Fehler bei der Eingebe gemacht";
             }
+            
             
 
 
@@ -77,7 +80,7 @@ namespace WikiSearch
             lbl_searching.Text = "";
             lbl_searching.BackColor = Color.Transparent;
             lbl_cancelled.Text = "Suche abgebrochen";
-            lbl_cancelled.BackColor = Color.Red;                        //in Light Rot ändern
+            lbl_cancelled.BackColor = Color.Red;                        
             txtbx_searchquery.Text = "";
             lbl_resultesfound.Text = "";
             lbl_clearsuch.Text = "Ergebnisse gelöscht";
