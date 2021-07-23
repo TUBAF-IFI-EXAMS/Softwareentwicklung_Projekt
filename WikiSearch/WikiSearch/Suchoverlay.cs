@@ -58,7 +58,7 @@ namespace WikiSearch
 
                 foreach (WikiSearchResult result in response.Query.SearchResults)           // Tabelle füllen
                 {
-                    Suchergebnis.dgv.Rows.Add(Text = result.Title, result.WordCount , result.Size, result.Preview,($"\t{result.Url(searchSettings.Language)}"), result.LastEdited);
+                    Suchergebnis.dgv.Rows.Add(result.Title, result.WordCount , result.Size, result.Preview,($"\t{result.Url(searchSettings.Language)}"), result.LastEdited);
                 }
                 Suchergebnis.ShowDialog();
                 
