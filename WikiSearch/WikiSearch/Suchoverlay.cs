@@ -137,7 +137,7 @@ namespace WikiSearch
             Sprache = "en";
         }
     }
-    public class suchanfrage
+    public class suchanfrage                                                            // Klassenaufteilung war geplant, hat sich als unnötig erwiesen
     {
         public uint AnfrageID { get; set; }
         public byte Ergebnisanz { get; set; }
