@@ -15,8 +15,10 @@ namespace WikiSearch
 {
     public partial class Suchoverlay : Form
     {
+        public static Suchoverlay instance;
         public int maxSearch = 5;                                           // zusätzliche Variablen Festlegen
         public string Sprache = "de";
+        public int verschiebung = 0;
         SuchergebnisOverlay Suchergebnis = new SuchergebnisOverlay();       
         DataTable table = new DataTable();
        
@@ -29,7 +31,7 @@ namespace WikiSearch
             lbl_searchnote.Text = "Geben Sie Ihren Suchbegriff in die Suchzeile ein.";
             lbl_resultesfound.Text = "";
             lbl_clearsuch.Text = "";
-
+            instance = this;
 
         }
        
@@ -48,7 +50,7 @@ namespace WikiSearch
             if (txtbx_searchquery.Text != "")                           // prüfen ob Eingabefeld ist leer
             {
                 WikiSearchSettings searchSettings = new WikiSearchSettings          
-                { RequestId = "Request ID", ResultLimit = maxSearch, ResultOffset = 2, Language = Sprache };
+                { RequestId = "Request ID", ResultLimit = maxSearch, ResultOffset = verschiebung, Language = Sprache };
 
                 WikiSearchResponse response = WikiSearcher.Search(searchString, searchSettings);
 
@@ -60,7 +62,8 @@ namespace WikiSearch
                 {
                     Suchergebnis.dgv.Rows.Add(result.Title, result.WordCount , result.Size, result.Preview,($"\t{result.Url(searchSettings.Language)}"), result.LastEdited);
                 }
-                Suchergebnis.ShowDialog();
+                if (Suchergebnis.Visible == false) { Suchergebnis.ShowDialog(); }
+                
                 
             }
             else                                                                            //  wenn Eingabefeld leer Fehlermedldung ausgeben
@@ -133,5 +136,22 @@ namespace WikiSearch
         {
             Sprache = "en";
         }
+    }
+    public class suchanfrage
+    {
+        public uint AnfrageID { get; set; }
+        public byte Ergebnisanz { get; set; }
+        public ushort Seite { get; set; }
+        public string Sprache { get; set; }
+    }
+
+    public class suchausgabe
+    {
+        public string Titel { get; set; }
+        public uint Wortanzahl { get; set; }
+        public uint Groesse { get; set; }
+        public string Vorschau { get; set; }
+        public string URL { get; set; }
+        public DateTime letzteAenderung { get; set; }
     }
 }

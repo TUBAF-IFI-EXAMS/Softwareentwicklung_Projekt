@@ -17,4 +17,5 @@ namespace WikiSearch
             Application.Run(new Suchoverlay());
         }
     }
+    
 }

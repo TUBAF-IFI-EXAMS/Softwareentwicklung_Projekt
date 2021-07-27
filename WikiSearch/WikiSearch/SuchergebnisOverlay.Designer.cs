@@ -53,6 +53,9 @@ namespace WikiSearch
             this.lbl_sortingon = new System.Windows.Forms.Label();
             this.lbl_sortingtype = new System.Windows.Forms.Label();
             this.btn_resetsorting = new System.Windows.Forms.Button();
+            this.seite1 = new System.Windows.Forms.Button();
+            this.zurueck = new System.Windows.Forms.Button();
+            this.vorran = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -79,7 +82,7 @@ namespace WikiSearch
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1, 20);
+            this.label1.Size = new System.Drawing.Size(1, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reihe 1";
             // 
@@ -102,11 +105,12 @@ namespace WikiSearch
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dgv.Location = new System.Drawing.Point(35, 94);
+            this.dgv.Location = new System.Drawing.Point(31, 70);
+            this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 29;
-            this.dgv.Size = new System.Drawing.Size(1598, 552);
+            this.dgv.Size = new System.Drawing.Size(1398, 414);
             this.dgv.TabIndex = 1;
             // 
             // Column1
@@ -115,7 +119,7 @@ namespace WikiSearch
             this.Column1.HeaderText = "Titel";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 67;
+            this.Column1.Width = 54;
             // 
             // Column2
             // 
@@ -137,7 +141,7 @@ namespace WikiSearch
             this.Column4.HeaderText = "Text Vorschau";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 128;
+            this.Column4.Width = 96;
             // 
             // Column5
             // 
@@ -145,7 +149,7 @@ namespace WikiSearch
             this.Column5.HeaderText = "URL";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 64;
+            this.Column5.Width = 53;
             // 
             // Column6
             // 
@@ -153,13 +157,14 @@ namespace WikiSearch
             this.Column6.HeaderText = "Letze Änderung";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 142;
+            this.Column6.Width = 106;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(35, 652);
+            this.btn_delete.Location = new System.Drawing.Point(31, 489);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(106, 29);
+            this.btn_delete.Size = new System.Drawing.Size(93, 22);
             this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Zeile löschen";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -167,9 +172,10 @@ namespace WikiSearch
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(35, 708);
+            this.btn_clear.Location = new System.Drawing.Point(31, 531);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(202, 29);
+            this.btn_clear.Size = new System.Drawing.Size(177, 22);
             this.btn_clear.TabIndex = 3;
             this.btn_clear.Text = "alle Suchergebnisse löschen";
             this.btn_clear.UseVisualStyleBackColor = true;
@@ -182,7 +188,8 @@ namespace WikiSearch
             this.einstellungenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1645, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1439, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -191,7 +198,7 @@ namespace WikiSearch
             this.einstellungenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sortierungToolStripMenuItem});
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             // 
             // sortierungToolStripMenuItem
@@ -200,7 +207,7 @@ namespace WikiSearch
             this.nachTitelToolStripMenuItem,
             this.nachÄnderungsdatumToolStripMenuItem});
             this.sortierungToolStripMenuItem.Name = "sortierungToolStripMenuItem";
-            this.sortierungToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.sortierungToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.sortierungToolStripMenuItem.Text = "Sortierung";
             // 
             // nachTitelToolStripMenuItem
@@ -209,20 +216,20 @@ namespace WikiSearch
             this.alphabetischAzToolStripMenuItem,
             this.alphabetischZaToolStripMenuItem});
             this.nachTitelToolStripMenuItem.Name = "nachTitelToolStripMenuItem";
-            this.nachTitelToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.nachTitelToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.nachTitelToolStripMenuItem.Text = "nach Titel";
             // 
             // alphabetischAzToolStripMenuItem
             // 
             this.alphabetischAzToolStripMenuItem.Name = "alphabetischAzToolStripMenuItem";
-            this.alphabetischAzToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.alphabetischAzToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.alphabetischAzToolStripMenuItem.Text = "alphabetisch a-z";
             this.alphabetischAzToolStripMenuItem.Click += new System.EventHandler(this.alphabetischAzToolStripMenuItem_Click);
             // 
             // alphabetischZaToolStripMenuItem
             // 
             this.alphabetischZaToolStripMenuItem.Name = "alphabetischZaToolStripMenuItem";
-            this.alphabetischZaToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.alphabetischZaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.alphabetischZaToolStripMenuItem.Text = "alphabetisch z-a";
             this.alphabetischZaToolStripMenuItem.Click += new System.EventHandler(this.alphabetischZaToolStripMenuItem_Click);
             // 
@@ -232,56 +239,90 @@ namespace WikiSearch
             this.neusteZuerstToolStripMenuItem,
             this.ältesteZuerstToolStripMenuItem});
             this.nachÄnderungsdatumToolStripMenuItem.Name = "nachÄnderungsdatumToolStripMenuItem";
-            this.nachÄnderungsdatumToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.nachÄnderungsdatumToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.nachÄnderungsdatumToolStripMenuItem.Text = "nach Änderungsdatum";
             // 
             // neusteZuerstToolStripMenuItem
             // 
             this.neusteZuerstToolStripMenuItem.Name = "neusteZuerstToolStripMenuItem";
-            this.neusteZuerstToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.neusteZuerstToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.neusteZuerstToolStripMenuItem.Text = "neuste zuerst";
             this.neusteZuerstToolStripMenuItem.Click += new System.EventHandler(this.neusteZuerstToolStripMenuItem_Click);
             // 
             // ältesteZuerstToolStripMenuItem
             // 
             this.ältesteZuerstToolStripMenuItem.Name = "ältesteZuerstToolStripMenuItem";
-            this.ältesteZuerstToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.ältesteZuerstToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ältesteZuerstToolStripMenuItem.Text = "älteste zuerst";
             this.ältesteZuerstToolStripMenuItem.Click += new System.EventHandler(this.ältesteZuerstToolStripMenuItem_Click);
             // 
             // lbl_sortingon
             // 
             this.lbl_sortingon.AutoSize = true;
-            this.lbl_sortingon.Location = new System.Drawing.Point(400, 32);
+            this.lbl_sortingon.Location = new System.Drawing.Point(350, 24);
             this.lbl_sortingon.Name = "lbl_sortingon";
-            this.lbl_sortingon.Size = new System.Drawing.Size(116, 20);
+            this.lbl_sortingon.Size = new System.Drawing.Size(93, 15);
             this.lbl_sortingon.TabIndex = 7;
             this.lbl_sortingon.Text = "Sortierung aktiv:";
             // 
             // lbl_sortingtype
             // 
             this.lbl_sortingtype.AutoSize = true;
-            this.lbl_sortingtype.Location = new System.Drawing.Point(522, 32);
+            this.lbl_sortingtype.Location = new System.Drawing.Point(457, 24);
             this.lbl_sortingtype.Name = "lbl_sortingtype";
-            this.lbl_sortingtype.Size = new System.Drawing.Size(50, 20);
+            this.lbl_sortingtype.Size = new System.Drawing.Size(38, 15);
             this.lbl_sortingtype.TabIndex = 8;
             this.lbl_sortingtype.Text = "label4";
             // 
             // btn_resetsorting
             // 
-            this.btn_resetsorting.Location = new System.Drawing.Point(400, 55);
+            this.btn_resetsorting.Location = new System.Drawing.Point(350, 41);
+            this.btn_resetsorting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_resetsorting.Name = "btn_resetsorting";
-            this.btn_resetsorting.Size = new System.Drawing.Size(183, 29);
+            this.btn_resetsorting.Size = new System.Drawing.Size(160, 22);
             this.btn_resetsorting.TabIndex = 9;
             this.btn_resetsorting.Text = "Sortierung zurücksetzten";
             this.btn_resetsorting.UseVisualStyleBackColor = true;
             this.btn_resetsorting.Click += new System.EventHandler(this.btn_resetsorting_Click);
             // 
+            // seite1
+            // 
+            this.seite1.Location = new System.Drawing.Point(561, 41);
+            this.seite1.Name = "seite1";
+            this.seite1.Size = new System.Drawing.Size(123, 23);
+            this.seite1.TabIndex = 10;
+            this.seite1.Text = "erste Seite";
+            this.seite1.UseVisualStyleBackColor = true;
+            this.seite1.Click += new System.EventHandler(this.seite1_Click);
+            // 
+            // zurueck
+            // 
+            this.zurueck.Location = new System.Drawing.Point(722, 41);
+            this.zurueck.Name = "zurueck";
+            this.zurueck.Size = new System.Drawing.Size(119, 23);
+            this.zurueck.TabIndex = 11;
+            this.zurueck.Text = "vorherige Seite";
+            this.zurueck.UseVisualStyleBackColor = true;
+            this.zurueck.Click += new System.EventHandler(this.zurueck_Click);
+            // 
+            // vorran
+            // 
+            this.vorran.Location = new System.Drawing.Point(872, 41);
+            this.vorran.Name = "vorran";
+            this.vorran.Size = new System.Drawing.Size(120, 23);
+            this.vorran.TabIndex = 12;
+            this.vorran.Text = "nächste Seite";
+            this.vorran.UseVisualStyleBackColor = true;
+            this.vorran.Click += new System.EventHandler(this.vorran_Click);
+            // 
             // SuchergebnisOverlay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1645, 763);
+            this.ClientSize = new System.Drawing.Size(1439, 572);
+            this.Controls.Add(this.vorran);
+            this.Controls.Add(this.zurueck);
+            this.Controls.Add(this.seite1);
             this.Controls.Add(this.btn_resetsorting);
             this.Controls.Add(this.lbl_sortingtype);
             this.Controls.Add(this.lbl_sortingon);
@@ -290,6 +331,7 @@ namespace WikiSearch
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SuchergebnisOverlay";
             this.Text = "SuchergebnisOverlay";
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -327,5 +369,8 @@ namespace WikiSearch
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button seite1;
+        private System.Windows.Forms.Button zurueck;
+        private System.Windows.Forms.Button vorran;
     }
 }

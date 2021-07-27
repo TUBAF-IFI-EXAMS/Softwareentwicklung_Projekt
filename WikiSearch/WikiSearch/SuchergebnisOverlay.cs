@@ -12,8 +12,7 @@ namespace WikiSearch
 {
     public partial class SuchergebnisOverlay : Form
     {
-        
-        
+
         public SuchergebnisOverlay()        // Suchergebnis Overlay Initialisieren
         {
             InitializeComponent();
@@ -92,7 +91,34 @@ namespace WikiSearch
             lbl_sortingtype.Visible = false;
             btn_resetsorting.Visible = false;
             table.DefaultView.Sort = string.Empty;//todo
+        }     
+
+        
+
+
+        private void seite1_Click(object sender, EventArgs e)
+        {
+            dgv.Rows.Clear();
+            Suchoverlay.instance.btn_search_Click(sender, e);
+
+            //seite neu laden
         }
 
+        private void zurueck_Click(object sender, EventArgs e)
+        {
+            //eine seite zurück
+            dgv.Rows.Clear();
+            Suchoverlay.instance.verschiebung -= Suchoverlay.instance.maxSearch;
+            if (Suchoverlay.instance.verschiebung < 0) { Suchoverlay.instance.verschiebung = 0; }
+            Suchoverlay.instance.btn_search_Click(sender, e);
+        }
+
+        private void vorran_Click(object sender, EventArgs e)
+        {
+            //eine seite vorran
+            dgv.Rows.Clear();
+            Suchoverlay.instance.verschiebung += Suchoverlay.instance.maxSearch;
+            Suchoverlay.instance.btn_search_Click(sender, e);
+        }
     }
 }
